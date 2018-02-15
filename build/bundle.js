@@ -5684,10 +5684,10 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     render() {
         return this.state.calendarModel.map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'week' },
+            { className: 'week week_calendar' },
             row.map(day => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'span',
-                { className: 'day' },
+                { className: 'day day_calendar' },
                 day || ""
             ))
         ));

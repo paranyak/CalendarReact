@@ -1,0 +1,98 @@
+body {
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.day {
+    float: left;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.day_name {
+    color: #F06E82;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.day_calendar {
+    color: #7B7D83;
+}
+
+.calendar {
+    background-image: linear-gradient(to right, #EAEAEA 1px, transparent 1px), linear-gradient(to bottom, #EAEAEA 1px, transparent 1px);
+    background-size: 70px 70px;
+    background-color: white;
+    min-height: 351px;
+    max-height: 421px;
+    width: 490px;
+    margin: 0 auto;
+    border-right: 0.5px #EAEAEA solid;
+}
+
+.week {
+    overflow: hidden;
+}
+
+.week_days {
+    width: 490px;
+    margin: 100px auto 0 auto;
+}
+
+.options {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-top: 5px #EF4F69 solid;
+    border-bottom: 1px #DDDDDD solid;
+    height: 90px;
+    background-color: white;
+}
+
+.option_year {
+    font-size: 13px;
+    text-align: center;
+    margin: 0;
+}
+
+.option_month {
+    color: #495468;
+    font-size: 16px;
+    margin: 0;
+}
+
+.calendar_detail {
+    color: #BFC3CB;
+    height: 40px;
+    margin: auto 15%;
+}
+
+.option_next {
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #EF4F69;
+}
+
+.option_prev {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #EF4F69;
+    font-size: 0;
+}
+
+.option__buttons {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

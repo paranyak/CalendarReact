@@ -5,34 +5,33 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Calendar</title>
     <style>
-        .day {
-            float: left;
-            height: 30px;
-            width: 30px;
-            text-align: center;
-            line-height: 30px;
-        }
-        .week {
-            overflow: hidden;
-        }
+
     </style>
 </head>
 <body>
 <div id="root">
-<div class="week">
-    <span class="day">Пн</span>
-    <span class="day">Вт</span>
-    <span class="day">Ср</span>
-    <span class="day">Чт</span>
-    <span class="day">Пт</span>
-    <span class="day">Сб</span>
-    <span class="day">Нд</span>
-</div>
-<div class="calendar"></div>
-<button class="prev">Prev</button>
-<button class="next">Next</button>
+    <div class="week week_days">
+        <span class="day day_name">MON</span>
+        <span class="day day_name">TUE</span>
+        <span class="day day_name">WED</span>
+        <span class="day day_name">THU</span>
+        <span class="day day_name">FRI</span>
+        <span class="day day_name">SAT</span>
+        <span class="day day_name">SUN</span>
+    </div>
+    <div class="calendar"></div>
+    <div class="options">
+        <button class="option__buttons"> <div class="option option_prev">Previous month </div></button>
+        <div class="calendar_detail">
+            <p class="option option_month">FEBRUARY</p>
+            <p class="option option_year">2018</p>
+        </div>
+        <button  class="option__buttons"> <div class="option option_next">Next month</div></button>
+    </div>
 </div>
 <script src="build/bundle.js"></script>
 </body>

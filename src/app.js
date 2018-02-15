@@ -32,13 +32,13 @@ class Calendar extends React.Component{
 
     render(){
         return (this.state.calendarModel.map(row =>
-        <div className="week">{row.map(day => <span className="day">{day || ""}</span>)}</div>
+        <div className="week week_calendar">{row.map(day => <span className="day day_calendar">{day || ""}</span>)}</div>
     ));
     }
 }
-
 
 ReactDOM.render(
     <Calendar/>,
     document.querySelector('.calendar')
 );
+
