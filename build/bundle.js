@@ -5662,6 +5662,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 let CURRENT_DATE = new Date();
 let CURRENT_YEAR = CURRENT_DATE.getFullYear();
 let CURRENT_MONTH = CURRENT_DATE.getMonth();
+let MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 
 const generateCalendarModel = (day, startDay = 0) => {
     const DAYS_AT_THE_WEEK = 7;
@@ -5679,13 +5680,36 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     constructor() {
         super();
         this.state = {
-            calendarModel: generateCalendarModel(new Date(new Date().setMonth(CURRENT_MONTH)), 1)
+            calendarModel: generateCalendarModel(new Date(new Date().setMonth(CURRENT_MONTH)), 1),
+            month: "FEBRUARY",
+            year: CURRENT_YEAR
         };
     }
 
+    handlePrev() {
+        //DOESN'T WORKwebpack
+        CURRENT_DATE = new Date(CURRENT_DATE.setMonth(CURRENT_MONTH - 1));
+        CURRENT_MONTH = CURRENT_DATE.getMonth();
+        CURRENT_YEAR = CURRENT_DATE.getFullYear();
+        this.setState({ calendarModel: generateCalendarModel(CURRENT_DATE, 1) });
+        this.setState({ year: CURRENT_YEAR });
+        this.setState({ month: MONTHS[CURRENT_MONTH] });
+        console.log(CURRENT_DATE);
+    }
+
+    handleNext() {
+        //DOESN'T WORKwebpack
+        CURRENT_DATE = new Date(CURRENT_DATE.setMonth(CURRENT_MONTH + 1));
+        CURRENT_MONTH = CURRENT_DATE.getMonth();
+        CURRENT_YEAR = CURRENT_DATE.getFullYear();
+        this.setState({ calendarModel: generateCalendarModel(CURRENT_DATE, 1) });
+        this.setState({ year: CURRENT_YEAR });
+        this.setState({ month: MONTHS[CURRENT_MONTH] });
+        console.log(CURRENT_DATE);
+    }
+
     render() {
-        console.log("Here");
-        return this.state.calendarModel.map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        let calendarTemplate = this.state.calendarModel.map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'week week_calendar' },
             row.map(day => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -5694,28 +5718,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 day || ""
             ))
         ));
-    }
-}
-
-class Button extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-    constructor() {
-        super();
-        this.state = {
-            month: "FEBRUARY",
-            year: CURRENT_YEAR
-        };
-    }
-
-    handlePrev() {
-        //DOESN'T WORK
-        const calendar = new Calendar();
-        CURRENT_DATE = new Date(new Date().setMonth(CURRENT_MONTH - 1));
-        calendar.setState({ calendarModel: generateCalendarModel(CURRENT_DATE, 1) });
-        console.log(calendar.state.calendarModel);
-    }
-
-    render() {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        let options = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'options' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -5748,19 +5751,60 @@ class Button extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 ' ',
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'option option_next' },
+                    { className: 'option option_next', onClick: e => this.handleNext(e) },
                     'Next month'
                 )
             )
         );
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            null,
+            ' ',
+            calendarTemplate,
+            '  ',
+            options
+        );
     }
 }
+//
+// class Button  extends React.Component{
+//     constructor(){
+//         super();
+//         this.state={
+//             month:"FEBRUARY",
+//             year: CURRENT_YEAR
+//         };
+//     }
+//
+//     handlePrev() {
+//         //DOESN'T WORKwebpack
+//         const calendar = new Calendar();
+//         CURRENT_DATE = new Date(new Date().setMonth(CURRENT_MONTH-1));
+//         calendar.setState({calendarModel :generateCalendarModel(CURRENT_DATE, 1)});
+//         console.log(calendar.state.calendarModel);
+//         }
+//
+//
+//     render(){
+//
+//         let options = (<div className="options">
+//             <button className="option__buttons"> <div className="option option_prev" onClick={(e) => this.handlePrev(e)}>Previous month </div></button>
+//         <div className="calendar_detail">
+//             <p className="option option_month">{this.state.month}</p>
+//         <p className="option option_year">{this.state.year}</p>
+//         </div>
+//         <button  className="option__buttons"> <div className="option option_next">Next month</div></button>
+//         </div>);
+//
+//             return  (options);
+//     }
+// }
+
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
     null,
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Calendar, null),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Button, null)
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Calendar, null)
 ), document.querySelector('.calendar'));
 
 /***/ }),
