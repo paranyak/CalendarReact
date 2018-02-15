@@ -96,3 +96,8 @@ body {
     border: none;
     cursor: pointer;
 }
+
+.option__buttonsa:active, .option__buttons:focus {
+    outline: 0;
+    border: none;
+}

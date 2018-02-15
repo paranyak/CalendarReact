@@ -5659,7 +5659,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-let CURRENT_MONTH = new Date().getMonth();
+let CURRENT_DATE = new Date();
+let CURRENT_YEAR = CURRENT_DATE.getFullYear();
+let CURRENT_MONTH = CURRENT_DATE.getMonth();
 
 const generateCalendarModel = (day, startDay = 0) => {
     const DAYS_AT_THE_WEEK = 7;
@@ -5682,6 +5684,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     }
 
     render() {
+        console.log("Here");
         return this.state.calendarModel.map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'week week_calendar' },
@@ -5694,7 +5697,71 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     }
 }
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Calendar, null), document.querySelector('.calendar'));
+class Button extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+    constructor() {
+        super();
+        this.state = {
+            month: "FEBRUARY",
+            year: CURRENT_YEAR
+        };
+    }
+
+    handlePrev() {
+        //DOESN'T WORK
+        const calendar = new Calendar();
+        CURRENT_DATE = new Date(new Date().setMonth(CURRENT_MONTH - 1));
+        calendar.setState({ calendarModel: generateCalendarModel(CURRENT_DATE, 1) });
+        console.log(calendar.state.calendarModel);
+    }
+
+    render() {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'options' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { className: 'option__buttons' },
+                ' ',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'option option_prev', onClick: e => this.handlePrev(e) },
+                    'Previous month '
+                )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'calendar_detail' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    { className: 'option option_month' },
+                    this.state.month
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'p',
+                    { className: 'option option_year' },
+                    this.state.year
+                )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'button',
+                { className: 'option__buttons' },
+                ' ',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'option option_next' },
+                    'Next month'
+                )
+            )
+        );
+    }
+}
+
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Calendar, null),
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Button, null)
+), document.querySelector('.calendar'));
 
 /***/ }),
 /* 134 */
