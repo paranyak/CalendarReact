@@ -25,11 +25,13 @@ body {
     background-image: linear-gradient(to right, #EAEAEA 1px, transparent 1px), linear-gradient(to bottom, #EAEAEA 1px, transparent 1px);
     background-size: 70px 70px;
     background-color: white;
-    min-height: 351px;
-    max-height: 421px;
+    /*min-height: 280px;*/
+    /*max-height: 420px;*/
     width: 490px;
     margin: 0 auto;
     border-right: 0.5px #EAEAEA solid;
+    border-bottom: 0.5px #EAEAEA solid;
+
 }
 
 .week {
@@ -75,29 +77,33 @@ body {
 
 .option_next {
     font-size: 0;
-    width: 0;
+    width: 10px;
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-left: 10px solid #EF4F69;
+    margin: 0 auto;
 }
 
 .option_prev {
-    width: 0;
+    width: 10px;
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
     border-right: 10px solid #EF4F69;
     font-size: 0;
+    margin: 0 auto;
+
 }
 
 .option__buttons {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    width: 70px;
 }
 
-.option__buttonsa:active, .option__buttons:focus {
+ .option__buttons:focus {
     outline: 0;
     border: none;
 }

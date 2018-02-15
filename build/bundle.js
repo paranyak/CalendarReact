@@ -5723,11 +5723,10 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { className: 'options' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
-                { className: 'option__buttons' },
-                ' ',
+                { className: 'option__buttons', onClick: e => this.handlePrev(e) },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'option option_prev', onClick: e => this.handlePrev(e) },
+                    { className: 'option option_prev' },
                     'Previous month '
                 )
             ),
@@ -5747,11 +5746,11 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
-                { className: 'option__buttons' },
+                { className: 'option__buttons', onClick: e => this.handleNext(e) },
                 ' ',
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'option option_next', onClick: e => this.handleNext(e) },
+                    { className: 'option option_next' },
                     'Next month'
                 )
             )

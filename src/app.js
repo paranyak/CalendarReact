@@ -63,12 +63,12 @@ class Calendar extends React.Component{
             <div className="week week_calendar">{row.map(day => <span className="day day_calendar">{day || ""}</span>)}</div>
     ));
         let options = ( <div className="options">
-            <button className="option__buttons"> <div className="option option_prev" onClick={(e) => this.handlePrev(e)}>Previous month </div></button>
+            <button className="option__buttons" onClick={(e) => this.handlePrev(e)}><div className="option option_prev">Previous month </div></button>
         <div className="calendar_detail">
             <p className="option option_month">{this.state.month}</p>
         <p className="option option_year">{this.state.year}</p>
         </div>
-        <button  className="option__buttons"> <div className="option option_next" onClick={(e) => this.handleNext(e)}>Next month</div></button>
+        <button  className="option__buttons" onClick={(e) => this.handleNext(e)}> <div className="option option_next">Next month</div></button>
         </div>);
         return ( <div> {calendarTemplate}  {options}</div>);
     }
