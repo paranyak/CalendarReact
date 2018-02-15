@@ -5681,31 +5681,28 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         super();
         this.state = {
             calendarModel: generateCalendarModel(new Date(new Date().setMonth(CURRENT_MONTH)), 1),
-            month: "FEBRUARY",
+            month: MONTHS[CURRENT_MONTH],
             year: CURRENT_YEAR
         };
     }
 
-    handlePrev() {
-        //DOESN'T WORKwebpack
-        CURRENT_DATE = new Date(CURRENT_DATE.setMonth(CURRENT_MONTH - 1));
+    changeVariables() {
         CURRENT_MONTH = CURRENT_DATE.getMonth();
         CURRENT_YEAR = CURRENT_DATE.getFullYear();
         this.setState({ calendarModel: generateCalendarModel(CURRENT_DATE, 1) });
         this.setState({ year: CURRENT_YEAR });
         this.setState({ month: MONTHS[CURRENT_MONTH] });
-        console.log(CURRENT_DATE);
+        // console.log(CURRENT_DATE);
+    }
+
+    handlePrev() {
+        CURRENT_DATE = new Date(CURRENT_DATE.setMonth(CURRENT_MONTH - 1));
+        this.changeVariables();
     }
 
     handleNext() {
-        //DOESN'T WORKwebpack
         CURRENT_DATE = new Date(CURRENT_DATE.setMonth(CURRENT_MONTH + 1));
-        CURRENT_MONTH = CURRENT_DATE.getMonth();
-        CURRENT_YEAR = CURRENT_DATE.getFullYear();
-        this.setState({ calendarModel: generateCalendarModel(CURRENT_DATE, 1) });
-        this.setState({ year: CURRENT_YEAR });
-        this.setState({ month: MONTHS[CURRENT_MONTH] });
-        console.log(CURRENT_DATE);
+        this.changeVariables();
     }
 
     render() {
@@ -5714,7 +5711,8 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { className: 'week week_calendar' },
             row.map(day => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'span',
-                { className: 'day day_calendar' },
+                {
+                    className: 'day day_calendar' },
                 day || ""
             ))
         ));
@@ -5727,7 +5725,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'option option_prev' },
-                    'Previous month '
+                    'Previous month'
                 )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -5747,7 +5745,6 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
                 { className: 'option__buttons', onClick: e => this.handleNext(e) },
-                ' ',
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'option option_next' },
@@ -5760,45 +5757,11 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             null,
             ' ',
             calendarTemplate,
-            '  ',
+            ' ',
             options
         );
     }
 }
-//
-// class Button  extends React.Component{
-//     constructor(){
-//         super();
-//         this.state={
-//             month:"FEBRUARY",
-//             year: CURRENT_YEAR
-//         };
-//     }
-//
-//     handlePrev() {
-//         //DOESN'T WORKwebpack
-//         const calendar = new Calendar();
-//         CURRENT_DATE = new Date(new Date().setMonth(CURRENT_MONTH-1));
-//         calendar.setState({calendarModel :generateCalendarModel(CURRENT_DATE, 1)});
-//         console.log(calendar.state.calendarModel);
-//         }
-//
-//
-//     render(){
-//
-//         let options = (<div className="options">
-//             <button className="option__buttons"> <div className="option option_prev" onClick={(e) => this.handlePrev(e)}>Previous month </div></button>
-//         <div className="calendar_detail">
-//             <p className="option option_month">{this.state.month}</p>
-//         <p className="option option_year">{this.state.year}</p>
-//         </div>
-//         <button  className="option__buttons"> <div className="option option_next">Next month</div></button>
-//         </div>);
-//
-//             return  (options);
-//     }
-// }
-
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
