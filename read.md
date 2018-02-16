@@ -1,0 +1,11 @@
+#code review 16.02.2018
+- видалити node_modules з гіта
+- додати git ignore
+- npm start (webpack + serve)
+- app.js винести з нього все стосовно календаря
+- створити компоненти слайдер (кнопки) і календар
+- менше css
+- не span а time
+- styles в src
+- підключити loader less
+- в index.html має бути тільки root
