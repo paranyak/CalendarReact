@@ -1,0 +1,13 @@
+.options {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    border-top: 5px #EF4F69 solid;
+    border-bottom: 1px #DDDDDD solid;
+    height: 90px;
+    background-color: white;
+}

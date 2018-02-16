@@ -1,0 +1,17 @@
+.day {
+    float: left;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.day_name {
+    color: #F06E82;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.day_calendar {
+    color: #7B7D83;
+}

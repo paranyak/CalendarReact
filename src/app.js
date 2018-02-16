@@ -16,6 +16,9 @@ const generateCalendarModel = (day, startDay = 0) => {
     const numberOfDays = date.daysInMonth;
 
     let weekday = (DAYS_AT_THE_WEEK - (startDay - date.set({day: 1}).weekday)) % DAYS_AT_THE_WEEK;
+    // let weekday = date.set({day: 1}).weekday -1;
+
+
 
     return splitEvery(DAYS_AT_THE_WEEK)
     ([
@@ -60,14 +63,14 @@ class Calendar extends React.Component {
                 className="day day_calendar">{day || ""}</span>)}</div>
         ));
         let options = ( <div className="options">
-            <button className="option__buttons" onClick={(e) => this.handlePrev(e)}>
+            <button className="buttons" onClick={(e) => this.handlePrev(e)}>
                 <div className="option option_prev">Previous month</div>
             </button>
-            <div className="calendar_detail">
+            <div className="calendar-detail">
                 <p className="option option_month">{this.state.month}</p>
                 <p className="option option_year">{this.state.year}</p>
             </div>
-            <button className="option__buttons" onClick={(e) => this.handleNext(e)}>
+            <button className="buttons" onClick={(e) => this.handleNext(e)}>
                 <div className="option option_next">Next month</div>
             </button>
         </div>);

@@ -5670,6 +5670,8 @@ const generateCalendarModel = (day, startDay = 0) => {
     const numberOfDays = date.daysInMonth;
 
     let weekday = (DAYS_AT_THE_WEEK - (startDay - date.set({ day: 1 }).weekday)) % DAYS_AT_THE_WEEK;
+    // let weekday = date.set({day: 1}).weekday -1;
+
 
     return Object(__WEBPACK_IMPORTED_MODULE_3_ramda__["a" /* splitEvery */])(DAYS_AT_THE_WEEK)([...Array(weekday).fill(), // "Prefix array"
     ...Array(numberOfDays).fill().map((el, i) => i + 1) // Calendar
@@ -5721,7 +5723,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { className: 'options' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
-                { className: 'option__buttons', onClick: e => this.handlePrev(e) },
+                { className: 'buttons', onClick: e => this.handlePrev(e) },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'option option_prev' },
@@ -5730,7 +5732,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'calendar_detail' },
+                { className: 'calendar-detail' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'p',
                     { className: 'option option_month' },
@@ -5744,7 +5746,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
-                { className: 'option__buttons', onClick: e => this.handleNext(e) },
+                { className: 'buttons', onClick: e => this.handleNext(e) },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'option option_next' },

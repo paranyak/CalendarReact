@@ -1,0 +1,10 @@
+.calendar {
+    background-image: linear-gradient(to right, #EAEAEA 1px, transparent 1px), linear-gradient(to bottom, #EAEAEA 1px, transparent 1px);
+    background-size: 70px 70px;
+    background-color: white;
+    width: 490px;
+    margin: 0 auto;
+    border-right: 0.5px #EAEAEA solid;
+    border-bottom: 0.5px #EAEAEA solid;
+
+}

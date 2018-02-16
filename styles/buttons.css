@@ -1,0 +1,11 @@
+.buttons {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+}
+
+.buttons:focus {
+    outline: 0;
+    border: none;
+}
