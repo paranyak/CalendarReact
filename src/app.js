@@ -59,8 +59,8 @@ class Calendar extends React.Component {
 
     render() {
         let calendarTemplate = (this.state.calendarModel.map(row =>
-            <div className="week week_calendar">{row.map(day => <span
-                className="day day_calendar">{day || ""}</span>)}</div>
+            <div className="week week_calendar">{row.map(day => <time
+                className="day day_calendar">{day || ""}</time>)}</div>
         ));
         let options = ( <div className="options">
             <button className="buttons" onClick={(e) => this.handlePrev(e)}>

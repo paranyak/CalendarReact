@@ -5712,7 +5712,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             'div',
             { className: 'week week_calendar' },
             row.map(day => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'span',
+                'time',
                 {
                     className: 'day day_calendar' },
                 day || ""
