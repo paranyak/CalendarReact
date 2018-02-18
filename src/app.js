@@ -7,7 +7,7 @@ import {splitEvery} from 'ramda';
 let CURRENT_DATE = new Date();
 let CURRENT_YEAR = CURRENT_DATE.getFullYear();
 let CURRENT_MONTH = CURRENT_DATE.getMonth();
-let MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+const MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 
 
 const generateCalendarModel = (day, startDay = 0) => {
