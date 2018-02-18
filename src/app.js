@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 import {DateTime} from 'luxon'
 import {splitEvery} from 'ramda';
 
+import "./styles/tmp.less"
+
+
 let CURRENT_DATE = new Date();
 let CURRENT_YEAR = CURRENT_DATE.getFullYear();
 let CURRENT_MONTH = CURRENT_DATE.getMonth();
