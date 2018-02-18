@@ -61,11 +61,20 @@ class Calendar extends React.Component {
     }
 
     render() {
+        let calendarWeekNames = (<div class="week week_days">
+                <span class="day day_name">MON</span>
+                <span class="day day_name">TUE</span>
+                <span class="day day_name">WED</span>
+                <span class="day day_name">THU</span>
+                <span class="day day_name">FRI</span>
+                <span class="day day_name">SAT</span>
+                <span class="day day_name">SUN</span>
+            </div>);
         let calendarTemplate = (this.state.calendarModel.map(row =>
             <div className="week week_calendar">{row.map(day => <time
                 className="day day_calendar">{day || ""}</time>)}</div>
-        ));
-        let options = ( <div className="options">
+            ) );
+        let calendarHeader = ( <div className="options">
             <button className="buttons" onClick={(e) => this.handlePrev(e)}>
                 <div className="option option_prev">Previous month</div>
             </button>
@@ -77,7 +86,7 @@ class Calendar extends React.Component {
                 <div className="option option_next">Next month</div>
             </button>
         </div>);
-        return (<div> {calendarTemplate} {options}</div>);
+        return (<div> {calendarWeekNames} <div className="calendar">{calendarTemplate}</div> {calendarHeader}</div>);
     }
 }
 
@@ -85,7 +94,7 @@ ReactDOM.render(
     <div>
         <Calendar/>
     </div>,
-    document.querySelector('.calendar')
+    document.querySelector('#root')
 );
 
 

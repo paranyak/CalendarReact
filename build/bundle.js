@@ -5712,6 +5712,45 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     }
 
     render() {
+        let calendarWeekNames = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { 'class': 'week week_days' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'MON'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'TUE'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'WED'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'THU'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'FRI'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'SAT'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { 'class': 'day day_name' },
+                'SUN'
+            )
+        );
         let calendarTemplate = this.state.calendarModel.map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'week week_calendar' },
@@ -5722,7 +5761,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 day || ""
             ))
         ));
-        let options = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        let calendarHeader = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'options' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -5762,9 +5801,15 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             'div',
             null,
             ' ',
-            calendarTemplate,
+            calendarWeekNames,
             ' ',
-            options
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'calendar' },
+                calendarTemplate
+            ),
+            ' ',
+            calendarHeader
         );
     }
 }
@@ -5773,7 +5818,7 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
     'div',
     null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Calendar, null)
-), document.querySelector('.calendar'));
+), document.querySelector('#root'));
 
 /***/ }),
 /* 134 */
