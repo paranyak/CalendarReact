@@ -23,7 +23,7 @@ class Header extends React.Component {
     }
 
     changeVariables(){
-        this.state.currentDate = CURRENT_DATE;
+        this.setState({currentDate :CURRENT_DATE});
         CURRENT_MONTH = CURRENT_DATE.getMonth();
         CURRENT_YEAR = CURRENT_DATE.getFullYear();
         this.setState({year: CURRENT_YEAR});
@@ -41,6 +41,7 @@ class Header extends React.Component {
     }
 
     render() {
+
         let calendarTemplate = <Calendar date={this.state.currentDate}/>;
 
         let calendarHeader = ( <div className="calendar-header">
