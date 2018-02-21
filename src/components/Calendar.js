@@ -12,7 +12,6 @@ const generateCalendarModel = (day) => {
     const date = DateTime.fromJSDate(day);
     const numberOfDays = date.daysInMonth;
 
-    // let weekday = (DAYS_AT_THE_WEEK - (startDay - date.set({day: 1}).weekday)) % DAYS_AT_THE_WEEK; //Last version
     let weekday = date.set({day: 1}).weekday -1;
     return splitEvery(DAYS_AT_THE_WEEK)
     ([
@@ -23,17 +22,6 @@ const generateCalendarModel = (day) => {
 
 
 class Calendar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            calendarModel: generateCalendarModel(this.props.date)
-        };
-    }
-
-    componentWillReceiveProps(nextProps){
-        this.setState({calendarModel:generateCalendarModel(nextProps.date)});
-    }
-
 
     render() {
         let calendarWeekNames = (<div className="week week_days">
@@ -45,7 +33,7 @@ class Calendar extends React.Component {
             <span className="day day_name">SAT</span>
             <span className="day day_name">SUN</span>
         </div>);
-        let calendarTemplate = (this.state.calendarModel.map(row =>
+        let calendarTemplate = (generateCalendarModel(this.props.date).map(row =>
             <div className="week week_calendar">{row.map(day => <time
                 className="day day_calendar">{day || ""}</time>)}</div>
         ) );

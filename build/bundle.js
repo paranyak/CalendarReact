@@ -23566,7 +23566,6 @@ const generateCalendarModel = day => {
     const date = __WEBPACK_IMPORTED_MODULE_1_luxon__["DateTime"].fromJSDate(day);
     const numberOfDays = date.daysInMonth;
 
-    // let weekday = (DAYS_AT_THE_WEEK - (startDay - date.set({day: 1}).weekday)) % DAYS_AT_THE_WEEK; //Last version
     let weekday = date.set({ day: 1 }).weekday - 1;
     return Object(__WEBPACK_IMPORTED_MODULE_2_ramda__["a" /* splitEvery */])(DAYS_AT_THE_WEEK)([...Array(weekday).fill(), // "Prefix array"
     ...Array(numberOfDays).fill().map((el, i) => i + 1) // Calendar
@@ -23574,16 +23573,6 @@ const generateCalendarModel = day => {
 };
 
 class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            calendarModel: generateCalendarModel(this.props.date)
-        };
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({ calendarModel: generateCalendarModel(nextProps.date) });
-    }
 
     render() {
         let calendarWeekNames = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -23625,7 +23614,7 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 'SUN'
             )
         );
-        let calendarTemplate = this.state.calendarModel.map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        let calendarTemplate = generateCalendarModel(this.props.date).map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'week week_calendar' },
             row.map(day => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
