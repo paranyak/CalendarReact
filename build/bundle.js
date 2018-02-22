@@ -23614,13 +23614,13 @@ class Calendar extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 'SUN'
             )
         );
-        let calendarTemplate = generateCalendarModel(this.props.date).map(row => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        let calendarTemplate = generateCalendarModel(this.props.date).map((row, i) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'week week_calendar' },
-            row.map(day => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            { className: 'week week_calendar', key: i },
+            row.map((day, i) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'time',
                 {
-                    className: 'day day_calendar' },
+                    className: 'day day_calendar', key: i },
                 day || ""
             ))
         ));

@@ -33,9 +33,9 @@ class Calendar extends React.Component {
             <span className="day day_name">SAT</span>
             <span className="day day_name">SUN</span>
         </div>);
-        let calendarTemplate = (generateCalendarModel(this.props.date).map(row =>
-            <div className="week week_calendar">{row.map(day => <time
-                className="day day_calendar">{day || ""}</time>)}</div>
+        let calendarTemplate = (generateCalendarModel(this.props.date).map((row, i) =>
+            <div className="week week_calendar"  key={i}>{row.map((day, i) => <time
+                className="day day_calendar" key={i}>{day || ""}</time>)}</div>
         ) );
         return (<div>{calendarWeekNames} <div className="calendar"> {calendarTemplate}</div></div>);
     }
