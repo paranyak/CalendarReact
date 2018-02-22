@@ -23441,8 +23441,8 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Calendar__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_calendar_option_less__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_calendar_option_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_calendar_option_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_option_less__ = __webpack_require__(362);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles_option_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__styles_option_less__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_calendar_header_less__ = __webpack_require__(358);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_calendar_header_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__styles_calendar_header_less__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_common_less__ = __webpack_require__(360);
@@ -23496,33 +23496,33 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { className: "calendar-header" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "button",
-                { className: "calendar-option calendar-option_buttons", onClick: e => this.handlePrev(e) },
+                { className: "option option_buttons", onClick: e => this.handlePrev(e) },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
-                    { className: "calendar-option calendar-option_prev" },
+                    { className: "option__prev" },
                     "Previous month"
                 )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "calendar-option calendar-option_detail" },
+                { className: "option option_detail" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "p",
-                    { className: "calendar-option calendar-option_month" },
+                    { className: "option__month" },
                     this.state.month
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "p",
-                    { className: "calendar-option calendar-option_year" },
+                    { className: "option__year" },
                     this.state.year
                 )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "button",
-                { className: "calendar-option calendar-option_buttons", onClick: e => this.handleNext(e) },
+                { className: "option option_buttons", onClick: e => this.handleNext(e) },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
-                    { className: "calendar-option calendar-option_next" },
+                    { className: "option__next" },
                     "Next month"
                 )
             )
@@ -39335,70 +39335,8 @@ exports.push([module.i, ".week {\n  overflow: hidden;\n}\n.week_days {\n  width:
 
 
 /***/ }),
-/* 356 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(357);
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(31)(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./calendar-option.less", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./calendar-option.less");
-
-		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-
-		var locals = (function(a, b) {
-			var key, idx = 0;
-
-			for(key in a) {
-				if(!b || a[key] !== b[key]) return false;
-				idx++;
-			}
-
-			for(key in b) idx--;
-
-			return idx === 0;
-		}(content.locals, newContent.locals));
-
-		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
-
-		update(newContent);
-	});
-
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 357 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(30)(false);
-// imports
-
-
-// module
-exports.push([module.i, ".calendar-option_buttons {\n  background-color: transparent;\n  border: none;\n  cursor: pointer;\n  width: 70px;\n}\n.calendar-option_buttons:focus {\n  outline: 0;\n  border: none;\n}\n.calendar-option_detail {\n  color: #BFC3CB;\n  height: 40px;\n  margin: auto 15%;\n}\n.calendar-option_next {\n  font-size: 0;\n  width: 10px;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n  border-left: 10px solid #EF4F69;\n  margin: 0 auto;\n}\n.calendar-option_prev {\n  width: 10px;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n  border-right: 10px solid #EF4F69;\n  font-size: 0;\n  margin: 0 auto;\n}\n.calendar-option_year {\n  font-size: 13px;\n  text-align: center;\n  margin: 0;\n}\n.calendar-option_month {\n  color: #495468;\n  font-size: 16px;\n  margin: 0;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 356 */,
+/* 357 */,
 /* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39522,6 +39460,70 @@ exports = module.exports = __webpack_require__(30)(false);
 
 // module
 exports.push([module.i, "body {\n  background-color: #F6F6F6;\n  font-family: 'Roboto', sans-serif;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 362 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(363);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(31)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {
+	module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./option.less", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/dist/cjs.js!./option.less");
+
+		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+
+		var locals = (function(a, b) {
+			var key, idx = 0;
+
+			for(key in a) {
+				if(!b || a[key] !== b[key]) return false;
+				idx++;
+			}
+
+			for(key in b) idx--;
+
+			return idx === 0;
+		}(content.locals, newContent.locals));
+
+		if(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');
+
+		update(newContent);
+	});
+
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 363 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(30)(false);
+// imports
+
+
+// module
+exports.push([module.i, ".option_buttons {\n  background-color: transparent;\n  border: none;\n  cursor: pointer;\n  width: 70px;\n}\n.option_buttons:focus {\n  outline: 0;\n  border: none;\n}\n.option_detail {\n  color: #BFC3CB;\n  height: 40px;\n  margin: auto 15%;\n}\n.option__next {\n  font-size: 0;\n  width: 10px;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n  border-left: 10px solid #EF4F69;\n  margin: 0 auto;\n}\n.option__prev {\n  width: 10px;\n  height: 0;\n  border-top: 10px solid transparent;\n  border-bottom: 10px solid transparent;\n  border-right: 10px solid #EF4F69;\n  font-size: 0;\n  margin: 0 auto;\n}\n.option__year {\n  font-size: 13px;\n  text-align: center;\n  margin: 0;\n}\n.option__month {\n  color: #495468;\n  font-size: 16px;\n  margin: 0;\n}\n", ""]);
 
 // exports
 

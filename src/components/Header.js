@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "./Calendar";
 
-import "../styles/calendar-option.less"
+import "../styles/option.less"
 import "../styles/calendar-header.less"
 import  "../styles/common.less"
 
@@ -45,15 +45,15 @@ class Header extends React.Component {
         let calendarTemplate = <Calendar date={this.state.currentDate}/>;
 
         let calendarHeader = ( <div className="calendar-header">
-            <button className="calendar-option calendar-option_buttons" onClick={(e) => this.handlePrev(e)}>
-                <div className="calendar-option calendar-option_prev">Previous month</div>
+            <button className="option option_buttons" onClick={(e) => this.handlePrev(e)}>
+                <div className="option__prev">Previous month</div>
             </button>
-            <div className="calendar-option calendar-option_detail">
-                <p className="calendar-option calendar-option_month">{this.state.month}</p>
-                <p className="calendar-option calendar-option_year">{this.state.year}</p>
+            <div className="option option_detail">
+                <p className="option__month">{this.state.month}</p>
+                <p className="option__year">{this.state.year}</p>
             </div>
-            <button className="calendar-option calendar-option_buttons" onClick={(e) => this.handleNext(e)}>
-                <div className="calendar-option calendar-option_next">Next month</div>
+            <button className="option option_buttons" onClick={(e) => this.handleNext(e)}>
+                <div className="option__next">Next month</div>
             </button>
         </div>);
         return (<div>{calendarTemplate} {calendarHeader}</div>);
